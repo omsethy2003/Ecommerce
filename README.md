@@ -13,9 +13,6 @@
 - [Error Handling](#error-handling)
 - [Project Structure](#project-structure)
 - [Initial Data Setup](#initial-data-setup)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## About the Project
 Sb-ecom is a robust and scalable e-commerce backend application built with Spring Boot. It provides a comprehensive set of APIs to manage users, products, orders, categories, carts, and payments. Designed with a clean architecture, secure JWT-based authentication, and efficient data handling with MySQL.
@@ -119,16 +116,4 @@ At startup:
   - `seller1/password2`
   - `admin/adminPass` (with all roles)
 
-## Contributing
-1. Fork the repo
-2. Create your feature branch: `git checkout -b feature/AmazingFeature`
-3. Commit: `git commit -m 'Add some AmazingFeature'`
-4. Push: `git push origin feature/AmazingFeature`
-5. Open a Pull Request
 
-## License
-Distributed under the MIT License.
-
-## Contact
-Your Name - [your_email@example.com](mailto:your_email@example.com)  
-Project Link: [https://github.com/your-username/sb-ecom](https://github.com/your-username/sb-ecom)
