@@ -1,5 +1,4 @@
-
-# Sb-ecom: E-commerce Backend Application 🛍️
+# Sb-ecom: E-commerce Backend Application
 
 ## Table of Contents
 - [About the Project](#about-the-project)
@@ -10,69 +9,102 @@
   - [Installation](#installation)
   - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
+  - [Authentication & Authorization](#authentication--authorization)
+  - [Address Management](#address-management)
+  - [Cart Management](#cart-management)
+  - [Category Management](#category-management)
+  - [Order Management](#order-management)
+  - [Product Management](#product-management)
 - [Error Handling](#error-handling)
 - [Project Structure](#project-structure)
-- [Initial Data Setup](#initial-data-setup)
+
 
 ## About the Project
-Sb-ecom is a robust and scalable e-commerce backend application built with Spring Boot. It provides a comprehensive set of APIs to manage users, products, orders, categories, carts, and payments. Designed with a clean architecture, secure JWT-based authentication, and efficient data handling with MySQL.
+Sb-ecom is a robust and scalable **e-commerce backend application** built with Spring Boot. It provides a comprehensive set of APIs to manage users, products, orders, categories, carts, and payments, enabling the foundation for a complete e-commerce platform. This project focuses on a clean architecture, secure authentication using JWT, and efficient data handling with MySQL.
+
+The application is designed to be the backbone for a modern e-commerce website, handling all server-side logic and data persistence.
 
 ## Features
-- **User Management**: Registration, login, RBAC, and profile management.
-- **Product Catalog**: CRUD for products and associations with categories.
-- **Category Management**: Full CRUD support.
-- **Shopping Cart**: Add, update, and remove items.
-- **Order Management**: Place orders and view/manage statuses.
-- **Payment Integration**: Stripe support for secure payments.
-- **Address Management**: Multiple shipping addresses per user.
-- **Error Handling**: Centralized with detailed messages.
-- **Security**: JWT, BCrypt, role-based access, and CORS.
-- **Data Mapping**: ModelMapper integration.
-- **Initial Setup**: Auto-creates roles and default users with roles.
+This application offers a wide range of functionalities to support a modern e-commerce system:
+
+### User Management:
+- User registration and login using JWT for secure authentication
+- Role-based access control (RBAC) with ROLE_USER, ROLE_SELLER, and ROLE_ADMIN roles
+- User profile management
+- **Authentication Utilities:** AuthUtil provides convenient methods to retrieve details of the currently logged-in user (email, ID, or the full User object) from the Spring Security context
+
+### Product Catalog:
+- CRUD operations (Create, Retrieve, Update, Delete) for products
+- Products are associated with categories
+
+### Category Management:
+- CRUD operations for product categories
+
+### Shopping Cart:
+- Add, update quantity, and remove items from a user's shopping cart
+- View detailed cart contents
+
+### Order Management:
+- Place new orders from the shopping cart
+- View order history for authenticated users
+- Manage order status (e.g., pending, shipped, delivered) by administrators
+
+### Payment Integration:
+- Secure payment processing using Stripe API
+
+### Address Management:
+- Allows users to manage multiple shipping addresses
+
+### Robust Error Handling:
+- Centralized exception handling via MyGlobalExceptionHandler to provide consistent and informative error responses
+
+### Security:
+- JSON Web Token (JWT) based authentication and authorization using jjwt library
+- Password encoding using BCryptPasswordEncoder
+- Configured CORS to allow requests from specified frontend URLs
+
+### Data Mapping:
+- Uses ModelMapper for efficient object-to-object mapping (e.g., between entities and DTOs)
+
+### Initial Data Setup:
+- CommandLineRunner to automatically create default roles and initial users upon application startup
 
 ## Technologies Used
-- **Backend**: Java 21, Spring Boot 3.5.0, Spring Web, Spring Security, Spring Data JPA, Lombok, ModelMapper, Jackson
-- **Database**: MySQL, MySQL Connector/J
-- **Security**: JWT (jjwt 0.12.6), Spring Security Test
-- **Payment**: Stripe Java Library 29.0.0
-- **Build Tool**: Maven
 
-## Getting Started
+### Core Stack
+| Technology | Purpose |
+|------------|---------|
+| Java 21 | Core programming language |
+| Spring Boot 3.5.0 | Application framework |
+| Spring Data JPA | Database interactions |
+| Spring Security | Authentication & authorization |
+| MySQL | Relational database |
 
-### Prerequisites
-- JDK 21+
-- Maven 3.x+
-- MySQL instance
-- Stripe account
+### Key Libraries
+| Library | Usage |
+|---------|-------|
+| Lombok | Reduce boilerplate code |
+| ModelMapper 3.0.0 | Object mapping |
+| JJWT 0.12.6 | JWT implementation |
+| Stripe Java 29.0.0 | Payment processing |
 
-### Installation
-```bash
-git clone https://github.com/your-username/sb-ecom.git
-cd sb-ecom
-```
+### Development Tools
+| Tool | Purpose |
+|------|---------|
+| Maven | Dependency management |
+| MySQL Connector/J | Database connectivity |
+| Jackson Databind | JSON processing |
 
-Update `src/main/resources/application.properties` with your local configuration:
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
-spring.datasource.username=root
-spring.datasource.password=your_password
-spring.app.jwtSecret=your_jwt_secret
-stripe.secret.key=${STRIPE_SECRET_KEY}
-```
+### Database:
+- MySQL
+- MySQL Connector/J
 
-### Build
-```bash
-mvn clean install
-```
+### Security:
+- JJWT (io.jsonwebtoken)
+- Spring Security Test
 
-## Running the Application
-```bash
-mvn spring-boot:run
-```
-
-Or run `SbEComApplication.java` from your IDE.
-
-Access the backend at: `http://localhost:8080`
+### Payment Gateway:
+- Stripe Java Library 29.0.0
 
 ## API Endpoints
 Extensive RESTful API support covering:
@@ -108,12 +140,16 @@ sb-ecom/
 └── resources/
 ```
 
-## Initial Data Setup
-At startup:
-- Creates roles: `ROLE_USER`, `ROLE_SELLER`, `ROLE_ADMIN`
-- Creates default users: 
-  - `user1/password1`
-  - `seller1/password2`
-  - `admin/adminPass` (with all roles)
+## Getting Started
+Follow these steps to get your development environment set up and run the application.
+
+### Prerequisites
+Before you begin, ensure you have the following installed:
+- **Java Development Kit (JDK) 21 or higher**
+- **Maven 3.x or higher**
+- **MySQL Database**
+- **Stripe Account** (for payment processing)
+
+
 
 
