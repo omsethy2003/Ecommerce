@@ -12,6 +12,7 @@
   - [Order Management](#order-management)
   - [Product Management](#product-management)
 - [Error Handling](#error-handling)
+- [Security Features](#security-features)
 - [Project Structure](#project-structure)
 
 
@@ -95,9 +96,47 @@ This application offers a wide range of functionalities to support a modern e-co
 - MySQL
 - MySQL Connector/J
 
-### Security:
-- JJWT (io.jsonwebtoken)
-- Spring Security Test
+## Security Features
+
+### Authentication & Authorization
+- 🔐 JWT-based authentication system
+- 🛡️ Role-based access control (RBAC)
+- 🔑 Password encryption with BCrypt
+- 🚦 CORS configuration for frontend security
+
+### Protection Mechanisms
+- 🛡️ CSRF protection (disabled for API endpoints)
+- 🔒 HTTPS recommended for production
+- ⏱️ Token expiration (configurable)
+- 🗝️ Secure secret key management
+
+### Security Components
+| Component | Purpose |
+|-----------|---------|
+| `JwtUtils` | JWT generation/validation |
+| `AuthTokenFilter` | Request interception |
+| `AuthEntryPointJwt` | Unauthorized request handling |
+| `UserDetailsServiceImpl` | User authentication |
+| `WebSecurityConfig` | Main security configuration |
+
+## Features
+
+### Core Features
+- User management with roles
+- Product catalog system
+- Shopping cart functionality
+- Order processing
+- Payment integration (Stripe)
+
+## Technologies Used
+
+### Security Stack
+| Technology | Purpose |
+|------------|---------|
+| Spring Security | Authentication framework |
+| JJWT | JWT implementation |
+| BCrypt | Password hashing |
+| Spring Security Test | Security testing |
 
 ### Payment Gateway:
 - Stripe Java Library 29.0.0
