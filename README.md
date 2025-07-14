@@ -1,4 +1,4 @@
-# Sb-ecom: E-commerce Backend Application
+# Sb-ecom: E-commerce Backend 
 
 ## Table of Contents
 - [About the Project](#about-the-project)
