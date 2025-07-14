@@ -4,10 +4,6 @@
 - [About the Project](#about-the-project)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
   - [Authentication & Authorization](#authentication--authorization)
   - [Address Management](#address-management)
@@ -140,15 +136,6 @@ sb-ecom/
 └── resources/
 ```
 
-## Getting Started
-Follow these steps to get your development environment set up and run the application.
-
-### Prerequisites
-Before you begin, ensure you have the following installed:
-- **Java Development Kit (JDK) 21 or higher**
-- **Maven 3.x or higher**
-- **MySQL Database**
-- **Stripe Account** (for payment processing)
 
 
 
